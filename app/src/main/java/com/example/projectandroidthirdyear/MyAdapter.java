@@ -20,7 +20,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public interface OnRecyclerViewClickListener{
         public void OnItemClick(int position);
     }
-
+// constructor for the interface
     public void OnRecyclerViewClickListener(OnRecyclerViewClickListener listener){
         this.listener = listener;
     }

@@ -22,12 +22,13 @@
                 android:layout_height="wrap_content"
                 android:text="TextView" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/profile_btn"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/account_icon" />
 
         </LinearLayout>
 
