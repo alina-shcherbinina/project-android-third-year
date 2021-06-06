@@ -27,8 +27,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class SignInActivity extends Activity implements View.OnClickListener {
     SignInButton signInButton;
     Button singOut;
+    Button next;
     TextView textView;
     private FirebaseAuth mAuth;
+    GoogleSignInAccount account;
     private static final int RC_SIGN_IN = 9001;
 
     private GoogleSignInClient mGoogleSignInClient;
@@ -54,6 +56,9 @@ public class SignInActivity extends Activity implements View.OnClickListener {
         singOut = findViewById(R.id.signOut);
         singOut.setOnClickListener(this);
 
+        next = findViewById(R.id.next);
+        next.setOnClickListener(this);
+
         textView = findViewById(R.id.textView);
     }
 
@@ -66,9 +71,16 @@ public class SignInActivity extends Activity implements View.OnClickListener {
             case R.id.signOut:
                 signOut();
                 break;
+            case R.id.next:
+                nextActivity();
+                break;
         }
     }
-
+    public void nextActivity() {
+        Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
+        intent.putExtra("nameINTENT", account.getDisplayName());
+        startActivity(intent);
+    }
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         textView.setText("Singed out! Goodbye");
@@ -89,7 +101,7 @@ public class SignInActivity extends Activity implements View.OnClickListener {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
+                account = task.getResult(ApiException.class);
                 Log.d("TAG", "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
                 textView.setText("Hello! " + account.getDisplayName());
