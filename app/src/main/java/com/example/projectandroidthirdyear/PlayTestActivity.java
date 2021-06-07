@@ -35,7 +35,8 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             R.drawable.quiz_1_2,
             R.drawable.quiz_1_3,
             R.drawable.quiz_1_4,
-            R.drawable.quiz_1_5,};
+            R.drawable.quiz_1_5,
+            R.drawable.quiz_1_result};
 
     String[] correctPotter = { "Albus Dumbledore",
             "Snitch",
@@ -77,7 +78,8 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             R.drawable.quiz_2_2,
             R.drawable.quiz_2_3,
             R.drawable.quiz_2_4,
-            R.drawable.quiz_2_5,};
+            R.drawable.quiz_2_5,
+            R.drawable.quiz_2_result};
 
     String[] correctMovie = {"The Matrix",
             "The Lord of the Rings",
@@ -120,7 +122,8 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             R.drawable.quiz_3_2,
             R.drawable.quiz_3_3,
             R.drawable.quiz_3_4,
-            R.drawable.quiz_3_5,};
+            R.drawable.quiz_3_5,
+            R.drawable.quiz_3_result};
 
     String[] correctPI = {"Lebedev",
             "Shabalin",
@@ -166,7 +169,8 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             R.drawable.quiz_4_2,
             R.drawable.quiz_4_3,
             R.drawable.quiz_4_4,
-            R.drawable.quiz_4_5,};
+            R.drawable.quiz_4_5,
+            R.drawable.quiz_4_result};
 
     String[] correctCountry = {"Italy",
             "Australia",
@@ -262,7 +266,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra("scoreINTENT", String.valueOf(score));
         intent.putExtra("accountINTENT", account_name);
         intent.putExtra("pictureINTENT", picture_url);
-        intent.putExtra("imageINTENT", current_quiz.getPicture(1));
+        intent.putExtra("imageINTENT", current_quiz.getPicture(5));
         if (score <= 1){
             intent.putExtra("resultINTENT", current_quiz.getResults(0));
         } else if (score>=2 && score <=3) {
