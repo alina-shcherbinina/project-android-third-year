@@ -15,15 +15,19 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private final ArrayList<ItemClass> myList;
 
+    // INTERFACE FOR CLICKABLE ITEMS -----
+
     private OnRecyclerViewClickListener listener;
 
     public interface OnRecyclerViewClickListener{
         public void OnItemClick(int position);
     }
-// constructor for the interface
+    // constructor for the interface
     public void OnRecyclerViewClickListener(OnRecyclerViewClickListener listener){
         this.listener = listener;
     }
+
+    // ----------------- end
 
     public MyAdapter(ArrayList<ItemClass> myList) {
         this.myList = myList;
@@ -52,13 +56,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView_img;
         public TextView textView_name;
-
+                                                    // INTERFACE-------------
         public MyViewHolder(@NonNull View itemView, OnRecyclerViewClickListener listener) {
             super(itemView);
 
             imageView_img = itemView.findViewById(R.id.id_img_CardView);
             textView_name = itemView.findViewById(R.id.id_name_CardView);
 
+            // USING INTERFACE -----
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
