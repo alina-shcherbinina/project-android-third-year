@@ -12,6 +12,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         account_name = findViewById(R.id.account_name);
-        account_name.setText(getIntent().getStringExtra("accountINTENT"));
+        String account_saved = getIntent().getStringExtra("accountINTENT");
+        account_name.setText(account_saved);
     }
 }

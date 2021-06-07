@@ -14,6 +14,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_name;
     Button btn_start;
     int index;
+    String account_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        if(extras != null)
+        if(extras != null){
             index = extras.getInt("indexINTENT");
+            account_name = extras.getString("accountINTENT");
+        }
 
         img = findViewById(R.id.id_img_details);
         tv_name = findViewById(R.id.id_name_details);
@@ -45,6 +48,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private void StartTest() {
         Intent intent = new Intent(TestActivity.this, PlayTestActivity.class);
         intent.putExtra("indexINTENT", index);
+        intent.putExtra("accountINTENT", account_name);
         startActivity(intent);
 
     }

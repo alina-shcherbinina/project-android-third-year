@@ -78,9 +78,10 @@ public class SignInActivity extends Activity implements View.OnClickListener {
     }
     public void nextActivity() {
         Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
-        intent.putExtra("nameINTENT", account.getDisplayName());
+        intent.putExtra("accountINTENT", account.getDisplayName());
         startActivity(intent);
     }
+
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         textView.setText("Singed out! Goodbye");

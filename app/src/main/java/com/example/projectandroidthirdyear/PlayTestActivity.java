@@ -162,7 +162,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             {"China", "Bali", "Thailand", "Vietnam"}
     };
 
-    int[] picturesCountry = {R.drawable.quiz_3_1,
+    int[] picturesCountry = {R.drawable.quiz_4_1,
             R.drawable.quiz_4_2,
             R.drawable.quiz_4_3,
             R.drawable.quiz_4_4,
@@ -202,6 +202,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
 
     private Quiz current_quiz;
     private String q_answer;
+    String account_name;
 
 
     @Override
@@ -213,8 +214,10 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        if(extras != null)
+        if(extras != null){
             index = extras.getInt("indexINTENT");
+            account_name = extras.getString("accountINTENT");
+        }
 
         Log.d("INDEX", " " + index);
 
@@ -256,6 +259,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
         Intent intent = new Intent(PlayTestActivity.this, ResultTestActivity.class);
         intent.putExtra("titleINTENT", current_quiz.getTitle());
         intent.putExtra("scoreINTENT", String.valueOf(score));
+        intent.putExtra("accountINTENT", account_name);
         intent.putExtra("imageINTENT", current_quiz.getPicture(1));
         if (score <= 1){
             intent.putExtra("resultINTENT", current_quiz.getResults(0));

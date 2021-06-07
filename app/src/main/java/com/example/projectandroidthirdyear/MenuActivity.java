@@ -28,7 +28,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if(extras != null)
-            accountName = extras.getString("nameINTENT");
+            accountName = extras.getString("accountINTENT");
+
+        String account_name_saved = accountName;
 
         //--> Creating a list
         list = new ArrayList<>();
@@ -55,6 +57,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra("imageINTENT", list.get(position).getImg());
                 intent.putExtra("nameINTENT", list.get(position).getName());
                 intent.putExtra("indexINTENT", list.get(position).getIndex());
+                intent.putExtra("accountINTENT", account_name_saved);
                 startActivity(intent);
 
             }
@@ -64,7 +67,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ProfileActivity.class);
-                intent.putExtra("accountINTENT", accountName);
+                intent.putExtra("accountINTENT", account_name_saved);
                 startActivity(intent);
             }
         });
