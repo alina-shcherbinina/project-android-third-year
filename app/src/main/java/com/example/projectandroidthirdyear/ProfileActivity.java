@@ -2,13 +2,17 @@ package com.example.projectandroidthirdyear;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -18,10 +22,17 @@ import static android.content.ContentValues.TAG;
 public class ProfileActivity extends AppCompatActivity {
     TextView account_name, test_title, test_body;
     Button share_btn;
+    ImageView ivBasicImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        ivBasicImage = findViewById(R.id.imageView);
+
+        String picture = getIntent().getStringExtra("pictureINTENT");
+
+        Picasso.with(this).load(picture).into(ivBasicImage);
 
         account_name = findViewById(R.id.account_name);
         String account_saved = getIntent().getStringExtra("accountINTENT");

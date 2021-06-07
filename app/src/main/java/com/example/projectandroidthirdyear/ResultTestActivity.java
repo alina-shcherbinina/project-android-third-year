@@ -22,7 +22,7 @@ public class ResultTestActivity extends AppCompatActivity {
     TextView result_score, result_title, result_text;
     ImageView result_image;
     Button share, back_menu;
-    String account_name;
+    String account_name, picture_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class ResultTestActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if(extras != null){
             account_name = extras.getString("accountINTENT");
+            picture_url = extras.getString("pictureINTENT");
         }
-
 
         result_score = findViewById(R.id.score_result);
         result_title = findViewById(R.id.title_result);
@@ -59,7 +59,7 @@ public class ResultTestActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ResultTestActivity.this, MenuActivity.class);
                 intent.putExtra("accountINTENT", account_name);
-
+                intent.putExtra("pictureINTENT", picture_url);
                 intent.putExtra("titleINTENT", title_int);
                 intent.putExtra("scoreINTENT", score_int);
                 intent.putExtra("resultINTENT", result_int);
@@ -71,6 +71,7 @@ public class ResultTestActivity extends AppCompatActivity {
         String message = result_title.getText() + "\n "
                 + result_text.getText()
                 + "\nMy score is: " + getIntent().getStringExtra("scoreINTENT") +" out of 5";
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

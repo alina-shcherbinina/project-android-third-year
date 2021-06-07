@@ -79,6 +79,7 @@ public class SignInActivity extends Activity implements View.OnClickListener {
     public void nextActivity() {
         Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
         intent.putExtra("accountINTENT", account.getDisplayName());
+        intent.putExtra("pictureINTENT", account.getPhotoUrl().toString());
         startActivity(intent);
     }
 

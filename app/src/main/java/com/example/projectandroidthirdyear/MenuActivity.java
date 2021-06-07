@@ -1,6 +1,7 @@
 package com.example.projectandroidthirdyear;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,6 +21,7 @@ public class MenuActivity extends AppCompatActivity {
     String title_int;
     String score_int;
     String result_int;
+    String picture_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MenuActivity extends AppCompatActivity {
             title_int = extras.getString("titleINTENT");
             score_int = extras.getString("scoreINTENT");
             result_int = extras.getString("resultINTENT");
+            picture_url = extras.getString("pictureINTENT");
 
         String account_name_saved = accountName;
 
@@ -64,6 +67,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra("nameINTENT", list.get(position).getName());
                 intent.putExtra("indexINTENT", list.get(position).getIndex());
                 intent.putExtra("accountINTENT", account_name_saved);
+                intent.putExtra("pictureINTENT", picture_url);
                 startActivity(intent);
 
             }
@@ -77,6 +81,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra("titleINTENT", title_int);
                 intent.putExtra("scoreINTENT", score_int);
                 intent.putExtra("resultINTENT", result_int);
+                intent.putExtra("pictureINTENT", picture_url);
                 startActivity(intent);
             }
         });

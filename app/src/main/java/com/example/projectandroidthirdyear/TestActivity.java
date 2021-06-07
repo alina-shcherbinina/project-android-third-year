@@ -14,7 +14,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_name;
     Button btn_start;
     int index;
-    String account_name;
+    String account_name, picture_url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         if(extras != null){
             index = extras.getInt("indexINTENT");
             account_name = extras.getString("accountINTENT");
+            picture_url = extras.getString("pictureINTENT");
         }
 
         img = findViewById(R.id.id_img_details);
@@ -49,6 +50,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(TestActivity.this, PlayTestActivity.class);
         intent.putExtra("indexINTENT", index);
         intent.putExtra("accountINTENT", account_name);
+        intent.putExtra("pictureINTENT", picture_url);
         startActivity(intent);
 
     }

@@ -44,9 +44,9 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             "Hungarian Horntail"};
 
     String[] resultPotter = {
-            "Have you ever watched the movies?\n" + "If you want to keep up with Harry Potter universe, you have to (re)watch all of them!",
-            "You definitely watched the whole movie series!\n" + "But you missed some interesting details, don't you want to arrange Harry Potter movie series marathon?",
-            "You’re a huge Harry Potter movies fan! \n" + "You have watched every movie several times and you know every detail very well, you can be proud!"
+            "Have you ever watched the movies?\n" + " If you want to keep up with Harry Potter universe, you have to (re)watch all of them!",
+            "You definitely watched the whole movie series!\n" + " But you missed some interesting details, don't you want to arrange Harry Potter movie series marathon?",
+            "You’re a huge Harry Potter movies fan! \n" + " You have watched every movie several times and you know every detail very well, you can be proud!"
     };
 
     Quiz quizPotter = new Quiz(1, "How well do you know Harry Potter movies?",
@@ -70,7 +70,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
             {"The Lord of the Rings", "Harry Potter", "The King", "King Arthur"},
             {"Star Trek", "The Avengers", "Star Wars", "The Space Odyssey"},
             {"It", "Friday the 13th", "Scream", "The Shining"},
-            {"Donnie Darko", "The Eternal Sunshine of a Spotless Mind", "The Fight Club", "The Fight Club"}
+            {"Donnie Darko", "The Eternal Sunshine of a Spotless Mind", "The Fight Club", "A Beautiful Mind"}
     };
 
     int[] picturesMovie = {R.drawable.quiz_2_1,
@@ -87,9 +87,9 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
     };
 
     String[] resultMovie = {
-            "You don't know the basics!\n" + "But you can change it, you just have to start, it's worth it!",
-            "You've watched a lot of movies!" + "But there's something you could miss, you have to fill the gap to keep up!",
-            "You're a movie maniac!"+ "You know all the classic and popular movies, that's a very good result!",
+            "You don't know the basics!\n" + " But you can change it, you just have to start, it's worth it!",
+            "You've watched a lot of movies!" + " But there's something you could miss, you have to fill the gap to keep up!",
+            "You're a movie maniac!"+ " You know all the classic and popular movies, that's a very good result!",
     };
 
     Quiz quizMovie = new Quiz(2, "Guess the movie",
@@ -130,11 +130,11 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
     };
 
     String[] resultPI = {
-            "Are you even in PI?\n" + "Or maybe you didn't attend the lessons so you missed all the memes :(",
-            "You know some memes but not all of them!" +
+            "Are you even in PI?\n" + " Or maybe you didn't attend the lessons so you missed all the memes :(",
+            "You know some memes but not all of them! " +
             "Somehow you missed some memes but you know the most part that's a good result!",
             "You know some memes but not all of them!"+
-            "Somehow you missed some memes but you know the most part that's a good result!"
+            " Somehow you missed some memes but you know the most part that's a good result!"
     };
 
     Quiz quizPI = new Quiz(3, "Who said that? (PI edition)",
@@ -176,9 +176,9 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
     };
 
     String[] resultCountry = {
-            "Did you miss geographic lesions?\n" + "You know not a lot about different countries, please improve your knowledge!",
-            "Good job!" + "But there's some more things you can learn!",
-            "You have a really good knowledge in geographic!\n" + "Congrats, you know everything about countries and cultures, well done!"
+            "Did you miss geographic lesions?\n" + " You know not a lot about different countries, please improve your knowledge!",
+            "Good job!" + " But there's some more things you can learn!",
+            "You have a really good knowledge in geographic!\n" + " Congrats, you know everything about countries and cultures, well done!"
     };
 
     Quiz quizCountry = new Quiz(4, "Guess the country",
@@ -202,7 +202,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
 
     private Quiz current_quiz;
     private String q_answer;
-    String account_name;
+    String account_name, picture_url;
 
 
     @Override
@@ -217,6 +217,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
         if(extras != null){
             index = extras.getInt("indexINTENT");
             account_name = extras.getString("accountINTENT");
+            picture_url = extras.getString("pictureINTENT");
         }
 
         Log.d("INDEX", " " + index);
@@ -260,6 +261,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra("titleINTENT", current_quiz.getTitle());
         intent.putExtra("scoreINTENT", String.valueOf(score));
         intent.putExtra("accountINTENT", account_name);
+        intent.putExtra("pictureINTENT", picture_url);
         intent.putExtra("imageINTENT", current_quiz.getPicture(1));
         if (score <= 1){
             intent.putExtra("resultINTENT", current_quiz.getResults(0));

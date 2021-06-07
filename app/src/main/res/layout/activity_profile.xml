@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/account_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
@@ -18,15 +18,15 @@
         android:gravity="center"
         android:text="TextView"
         android:textColor="@color/purple_500"
-        android:textSize="30sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="43dp"
-        android:layout_height="40dp"
+        android:layout_width="81dp"
+        android:layout_height="80dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
         android:foregroundGravity="center"
@@ -46,7 +46,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/account_name" />
 
