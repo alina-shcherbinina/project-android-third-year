@@ -8,20 +8,35 @@
     <ImageView
         android:id="@+id/id_img_CardView"
         android:layout_width="300dp"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:foregroundGravity="center_vertical|center_horizontal"
         android:src="@drawable/quiz_1_cover"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/id_name_CardView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center|center_vertical"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/jost_regular"
+        android:gravity="left"
         android:text="Name"
-        app:layout_constraintTop_toBottomOf="@+id/id_img_CardView"
-        tools:layout_editor_absoluteX="187dp" />
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_img_CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
