@@ -17,6 +17,9 @@ public class MenuActivity extends AppCompatActivity {
     private String accountName;
     ImageButton profile_btn;
 
+    String title_int;
+    String score_int;
+    String result_int;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MenuActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if(extras != null)
             accountName = extras.getString("accountINTENT");
+            title_int = extras.getString("titleINTENT");
+            score_int = extras.getString("scoreINTENT");
+            result_int = extras.getString("resultINTENT");
 
         String account_name_saved = accountName;
 
@@ -68,6 +74,9 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ProfileActivity.class);
                 intent.putExtra("accountINTENT", account_name_saved);
+                intent.putExtra("titleINTENT", title_int);
+                intent.putExtra("scoreINTENT", score_int);
+                intent.putExtra("resultINTENT", result_int);
                 startActivity(intent);
             }
         });
