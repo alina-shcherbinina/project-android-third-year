@@ -19,7 +19,7 @@ public class PlayTestActivity extends AppCompatActivity implements View.OnClickL
 
     // ----- HARRY POTTER ------
     String[] questionsPotter = {"Who gifted Harry the invisibility cloak?",
-            "Who gifted Harry the invisibility cloak?",
+            "What is the name of the smallest ball in quidditch?",
             "Who was poisoned by the love potion?",
             "How many Harrys participated in Harry relocation operation?",
             "What type of dragon did Harry pull out in the first stage of Triwizard Tournament?"};
